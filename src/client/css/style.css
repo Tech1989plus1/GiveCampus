@@ -45,3 +45,16 @@ body {
   color: black;
   transform: rotateY(180deg);
 }
+
+#flex-container0 {
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-container0 > .box0-0 {
+  flex: 1 200px;
+}
+
+.fit-picture {
+  width: 400px;
+}
