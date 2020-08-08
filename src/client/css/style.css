@@ -58,3 +58,23 @@ body {
 .fit-picture {
   width: 400px;
 }
+
+#flex-container0 > .box0-1 {
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.box0-1 > #text0 {
+  font-size: 1.5rem;
+  color: purple;
+  font-family: arial
+}
+
+.box0-1 > #text1 {
+  margin-top: -20px;
+  font-size: 1.2rem;
+  color: black;
+  font-family: arial
+}
