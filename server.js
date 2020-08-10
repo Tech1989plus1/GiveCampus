@@ -1,6 +1,7 @@
 // load up the express framework abd body-parser helper
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 // created an instance of express to serve our end points
 const app = express();
@@ -12,6 +13,8 @@ const fs = require('fs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/', express.static(path.join(__dirname, './src/client')));
 
 const routes = require('./src/routes/routes.js')(app, fs);
 

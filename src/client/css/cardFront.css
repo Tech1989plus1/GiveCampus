@@ -75,13 +75,15 @@ body {
 .box0-1 > #text0 {
   font-size: 1.5rem;
   color: purple;
-  font-family: sans-serif
+  font-family: sans-serif;
+  margin-top: 10px;
 }
 
 .box0-1 > #text1 {
   font-size: 1.2rem;
   color: black;
-  font-family: sans-serif
+  font-family: sans-serif;
+  margin-top: 10px;
 }
 
 .box0-2 > #text2 {
@@ -91,12 +93,14 @@ body {
   text-align: left;
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 30px;
   color:  grey;
 }
 
 .box0-3 > #flex-container1{
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .box1-0 > #flex-container2 {
@@ -126,6 +130,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #fff;
+  margin-top: 10px;
 }
 
 .box1-1 > #bar {
@@ -146,6 +151,7 @@ body {
 .box1-2 > #flex-container3 {
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
 }
 
 #active {
