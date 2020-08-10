@@ -17,6 +17,8 @@ ourRequest.onload = () => {
 
   document.getElementById('precent').innerHTML = precentageDonated.toString() + '%';
   document.getElementById('donors').innerHTML = totalDonors.toString() + ' Donors';
+  document.getElementById('barPrecentage').innerHTML = precentageDonated.toString() + '%';
+  document.getElementById('barPrecentage').style.width = precentageDonated.toString() + '%';
   document.getElementById('donated').innerHTML = '$' + totalDonated.toString();
 };
 
