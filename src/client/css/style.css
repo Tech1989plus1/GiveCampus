@@ -75,18 +75,19 @@ body {
 .box0-1 > #text0 {
   font-size: 1.5rem;
   color: purple;
-  font-family: arial
+  font-family: sans-serif
 }
 
 .box0-1 > #text1 {
   font-size: 1.2rem;
   color: black;
-  font-family: arial
+  font-family: sans-serif
 }
 
 .box0-2 > #text2 {
   font-size: 1.2rem;
-  font-family: arial;
+  font-family: sans-serif;
+  font-weight: 100;
   text-align: left;
   margin-left: 20px;
   margin-right: 20px;
@@ -108,9 +109,13 @@ body {
   color: black;
   text-align: left;
   margin-left: 20px;
+  font-size: 1.2rem;
+  font-family: sans-serif;
 }
 
 #donors {
+  font-size: 1.2rem;
+  font-family: sans-serif;
   flex: 1 200px;
   text-align: right;
   margin-right: 20px;
@@ -129,17 +134,32 @@ body {
 }
 
 #active {
+  font-weight: 100;
   flex: 1 200px;
   text-align: left;
   margin-left: 20px;
-  color: black;
+  color: gray;
+  font-size: 1.2rem;
+  font-family: sans-serif;
 }
 
 #donated {
   flex: 1 200px;
   text-align: right;
-  margin-right: 20px;
+  margin-right: 5px;
   color: black;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+#donatedText {
+  flex: 1 0px;
+  text-align: right;
+  margin-right: 20px;
+  color: gray;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: 100;
 }
 
 

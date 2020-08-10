@@ -14,6 +14,10 @@ ourRequest.onload = () => {
   }
 
   precentageDonated = Math.floor((totalDonated / donorMax) * 100);
+
+  document.getElementById('precent').innerHTML = precentageDonated.toString() + '%';
+  document.getElementById('donors').innerHTML = totalDonors.toString() + ' Donors';
+  document.getElementById('donated').innerHTML = '$' + totalDonated.toString();
 };
 
 ourRequest.send();
