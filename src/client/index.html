@@ -72,8 +72,42 @@
               <table id="topDonors"></table>
             </div>
 
-            <div class ="box2-3"></div>
-            <div class ="box2-4"></div>
+            <div class ="box2-3">
+              <!-- Trigger/Open The Modal -->
+              <button id="modalButton" onClick="donorDonation()">MAKE A GIFT</button>
+
+              <!-- The Modal -->
+              <div class="modal" id="makeGift">
+                <div class="modalContent">
+                  <span  onClick="closeModal()" class="close">&times;</span>
+                  
+                  <div>
+                    <form>
+                      <label for="fname">First Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                      <label for="lname">Last Name</label>
+                      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                      <label for="dollars">Last Name</label>
+                      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                      <label for="type">Type</label>
+                      <select id="type" name="type">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                      </select>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class ="box2-4">
+              <p id="totalDonated">$0</p>
+            </div>
           </section>
 
         </div>

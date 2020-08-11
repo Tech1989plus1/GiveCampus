@@ -1,6 +1,6 @@
 .box2-0 > #text3 {
   font-size: 1.5rem;
-  color: purple;
+  color: #9B59B6;
   font-family: sans-serif;
   margin-top: 30px;
 }
@@ -27,8 +27,8 @@ table {
 table th {
   text-align: center;
   padding: 8px 40px;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 2px solid #ECF0F1;
+  border-bottom: 2px solid #ECF0F1;
   font-family: sans-serif;
   color:  #424949;
   font-weight: 400;
@@ -42,8 +42,9 @@ table th:first-child {
 
 table td {
   text-align: center;
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid #ECF0F1;
   padding: 8px 8px;
+  margin: .1px 0px;
   font-family: sans-serif;
   color:  #515A5A;
   font-size: .90rem;
@@ -52,4 +53,59 @@ table td {
 
 table td:first-child {
   text-align: left;
+}
+
+.box2-3 {
+  padding: 40px 100px 10px 100px;
+}
+
+.box2-3 > #modalButton {
+  border-radius: 30px;
+  height: 40px;
+  width: 170px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 700;
+  background-color: #9B59B6;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 500px;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.box2-4 {
+
 }

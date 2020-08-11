@@ -19,7 +19,7 @@ ourRequest.onload = () => {
 
   for (let i = 0; i < 10; i++) {
     let donor = donorsData[i];
-    tableData += `<tr><td>${donor.name}</td> <td>${donor.amount}</td> <td>${donor.type}</td></tr>`;
+    tableData += `<tr><td>${donor.name}</td> <td>$${donor.amount}</td> <td>${donor.type}</td></tr>`;
   }
 
   precentageDonated = Math.floor((totalDonated / donorMax) * 100);
@@ -30,6 +30,16 @@ ourRequest.onload = () => {
   document.getElementById('barPrecentage').style.width = precentageDonated.toString() + '%';
   document.getElementById('donated').innerHTML = '$' + totalDonated.toString();
   document.getElementById('topDonors').innerHTML = tableData;
+  document.getElementById('totalDonated').innerHTML = '$' + totalDonated.toString();
 };
 
 ourRequest.send();
+
+donorDonation = () => {
+  document.getElementById('makeGift').style.display = 'block';
+  
+}
+
+closeModal = () => {
+  document.getElementById('makeGift').style.display = 'none';
+}
