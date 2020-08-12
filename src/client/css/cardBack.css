@@ -91,6 +91,7 @@ table td:first-child {
   border: 1px solid #888;
   width: 80%;
   height: 80%;
+  border-radius: 12px;
 }
 
 .close {
@@ -104,6 +105,42 @@ table td:first-child {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+#formSetting {
+  margin: 40px 10px 40px 10px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-size: .90rem;
+  text-align: left;
+
+}
+
+input[type = text], select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: #9B59B6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #884EA0;
 }
 
 .box2-4 {

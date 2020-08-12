@@ -1,6 +1,12 @@
 const ourRequest = new XMLHttpRequest();
-ourRequest.open('GET', 'http://localhost:3001/donors');
+const URL = 'http://localhost:3001/donors';
 const donorMax = 25000;
+
+ourRequest.open('GET', URL);
+
+const init = () => {
+  document.getElementById('button-submit').addEventListener('click', send);
+}
 
 ourRequest.onload = () => {
   const donorsData = JSON.parse(ourRequest.responseText);
@@ -43,3 +49,21 @@ donorDonation = () => {
 closeModal = () => {
   document.getElementById('makeGift').style.display = 'none';
 }
+
+const send = (event) => {
+  event.preventDefault();
+
+  const xmlhttp = new XMLHttpRequest();
+  const name = document.getElementById('donorName').value;
+  const amount = Number(document.getElementById('donorAmount').value);
+  const type = document.getElementById('donorType').value;
+
+  const obj = {"name": name, "amount": amount, "type": type};
+
+
+  xmlhttp.open('POST', 'http://localhost:3001/donors');
+  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xmlhttp.send(JSON.stringify(obj));
+}
+
+document.addEventListener('DOMContentLoaded', init);
