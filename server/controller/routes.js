@@ -5,8 +5,8 @@ const path = require('path');
 
 const appRouter = (app, fs) => {
   // Variables
-  const dataPath = path.join(__dirname, '../data/donors.json');
-  
+  const dataPath = path.join(__dirname, '../../src/data/donors.json');
+
   // Read
   app.get('/donors', (req, res) => {
     fs.readFile(dataPath, 'utf8', (err, data) => {

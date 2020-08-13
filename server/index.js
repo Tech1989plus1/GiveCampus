@@ -10,16 +10,16 @@ const port = 3001;
 // Load up node buil in file system helper library here
 // using this later to serve our JSON files
 const fs = require('fs');
-const dataPath = path.join(__dirname, './src/data/donors.json');
+const dataPath = path.join(__dirname, '../src/data/donors.json');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serveing static file
-app.use('/', express.static(path.join(__dirname, './src/client')));
+app.use('/', express.static(path.join(__dirname, '../src/client')));
 
 // GET 
-const routes = require('./src/routes/routes.js')(app, fs);
+const routes = require('./controller/routes.js')(app, fs);
 
 // POST
 // Reading JSON file and appening new data to array object
