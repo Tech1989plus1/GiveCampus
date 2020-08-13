@@ -1,4 +1,4 @@
-# CampaignCard 
+# CampaignCard - [YouTube](https://youtu.be/F3OoohsapD8)
  
 - Build a campaign card front and back using HTML, CSS, and JavaScript
   
@@ -20,5 +20,3 @@
     ```
       npm start
     ```
-
-# 
