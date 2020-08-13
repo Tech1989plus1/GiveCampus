@@ -63,12 +63,10 @@ const send = (event) => {
   
   const obj = {"name": name, "amount": amount, "type": type};
   
-  
   xmlhttp.open('POST', 'http://localhost:3001/donors');
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlhttp.send(JSON.stringify(obj));
 }
-
 
 donorDonation = () => {
   document.getElementById('makeGift').style.display = 'block';
