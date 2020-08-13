@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serveing static file
 app.use('/', express.static(path.join(__dirname, '../src/client')));
 
-// GET 
+// GET ./controller/routes.js
 app.get('/donors', donorsGet);
 
-// POST
-// Reading JSON file and appening new data to array object
+// POST ./controller/routes.js
 app.post('/donors', donorPost);
 
 // Listening on localhost:3001/ server static file
+// Listening on localhost:3001/donors servering JSON file
 app.listen(port, () => {
   console.log(`Listening on port http://localhost:${port}`);
   console.log(`Donors.json listening on @ http://localhost:${port}/donors`);

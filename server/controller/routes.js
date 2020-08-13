@@ -1,10 +1,10 @@
-const path = require('path');
+// fs - JavaScript on the server helping with servering JSON file
 const fs = require('fs');
+const path = require('path');
 const dataPath = path.join(__dirname, '../../src/data/donors.json');
 
-// appRouter is a server function that servers donors.JSON to
+// donorsGet is a fs.readFile servers donors.JSON to
 // localhost:3001/donors
-
 exports.donorsGet =  async (req, res) => {
   fs.readFile(dataPath, 'utf8', (err, data) => {
     if(err) {
@@ -15,6 +15,8 @@ exports.donorsGet =  async (req, res) => {
   });
 };
 
+// donorsPost is a fs.writeFile writes donors.JSON and appends
+// donors information and servers localhost:3001/donors
 exports.donorPost = (req, res) => {
   fs.readFile(dataPath, 'utf8', (err, data) => {
     if(err) {
