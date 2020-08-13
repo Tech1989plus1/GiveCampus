@@ -1,26 +1,31 @@
+// XMLHttpRequest is going to help with interacting with the server
+// http://localhost:3001/donors is where the donors.JSON is being servered at
+
 const ourRequest = new XMLHttpRequest();
 const URL = 'http://localhost:3001/donors';
 const donorMax = 25000;
 
+// Opening XMLHttpRequest
 ourRequest.open('GET', URL);
 
 const init = () => {
   document.getElementById('button-submit').addEventListener('click', send);
 }
 
+// thousands_separators funtions help with adding commas into a number sting
 const thousands_separators = (num) => {
   let num_parts = Number.parseFloat(num).toFixed(2).toString().split(".");
   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return num_parts.join(".");
   }
 
+// Ajax (XMLHttpRequest) to pull in the included JSON file of donors and load it asynchronously
 ourRequest.onload = () => {
   const donorsData = JSON.parse(ourRequest.responseText);
 
   const totalDonors = donorsData.length;
   var totalDonated = 0;
   var precentageDonated = 0;
-
   var tableData = '<tr><th>Donor</th> <th>Dollars</th> <th>Type</th></tr>';
 
   donorsData.sort((a ,b) => b.amount - a.amount);
@@ -47,12 +52,13 @@ ourRequest.onload = () => {
   document.getElementById('totalDonated').innerHTML = '$' + totalDonated;
 };
 
+// Send funtion a POST to a JSON file
 const send = (event) => {
   event.preventDefault();
   
   const xmlhttp = new XMLHttpRequest();
   const name = document.getElementById('donorName').value;
-  const amount = Number(document.getElementById('donorAmount').value).toFixed(2);
+  const amount = Number.parseFloat(document.getElementById('donorAmount').value).toFixed(2);
   const type = document.getElementById('donorType').value;
   
   const obj = {"name": name, "amount": amount, "type": type};
@@ -62,6 +68,7 @@ const send = (event) => {
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlhttp.send(JSON.stringify(obj));
 }
+
 
 donorDonation = () => {
   document.getElementById('makeGift').style.display = 'block';

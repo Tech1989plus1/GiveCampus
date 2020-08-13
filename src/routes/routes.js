@@ -1,10 +1,13 @@
 const path = require('path');
 
+// appRouter is a server function that servers donors.JSON to
+// localhost:3001/donors
+
 const appRouter = (app, fs) => {
-  //variables
+  // Variables
   const dataPath = path.join(__dirname, '../data/donors.json');
   
-  //Read
+  // Read
   app.get('/donors', (req, res) => {
     fs.readFile(dataPath, 'utf8', (err, data) => {
       if(err) {
