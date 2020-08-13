@@ -9,9 +9,9 @@ const init = () => {
 }
 
 const thousands_separators = (num) => {
-    var num_parts = num.toFixed(2).toString().split(".");
-    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return num_parts.join(".");
+  let num_parts = Number.parseFloat(num).toFixed(2).toString().split(".");
+  num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return num_parts.join(".");
   }
 
 ourRequest.onload = () => {
@@ -24,9 +24,9 @@ ourRequest.onload = () => {
   var tableData = '<tr><th>Donor</th> <th>Dollars</th> <th>Type</th></tr>';
 
   donorsData.sort((a ,b) => b.amount - a.amount);
-
+  
   for (let i = 0; i < totalDonors; i++) {
-    totalDonated += donorsData[i].amount;
+    totalDonated += Number(donorsData[i].amount);
   }
 
   for (let i = 0; i < 10; i++) {
@@ -36,13 +36,15 @@ ourRequest.onload = () => {
 
   precentageDonated = Math.floor((totalDonated / donorMax) * 100);
 
-  document.getElementById('precent').innerHTML = precentageDonated.toString() + '%';
-  document.getElementById('donors').innerHTML = totalDonors.toString() + ' Donors';
-  document.getElementById('barPrecentage').innerHTML = precentageDonated.toString() + '%';
-  document.getElementById('barPrecentage').style.width = precentageDonated.toString() + '%';
-  document.getElementById('donated').innerHTML = '$' + thousands_separators(totalDonated);
+  totalDonated = thousands_separators(totalDonated);
+
+  document.getElementById('precent').innerHTML = precentageDonated + '%';
+  document.getElementById('donors').innerHTML = totalDonors + ' Donors';
+  document.getElementById('barPrecentage').innerHTML = precentageDonated + '%';
+  document.getElementById('barPrecentage').style.width = ((precentageDonated > 100) ? 100 : precentageDonated) + '%';
+  document.getElementById('donated').innerHTML = '$' + totalDonated;
   document.getElementById('topDonors').innerHTML = tableData;
-  document.getElementById('totalDonated').innerHTML = '$' + thousands_separators(totalDonated);
+  document.getElementById('totalDonated').innerHTML = '$' + totalDonated;
 };
 
 const send = (event) => {
