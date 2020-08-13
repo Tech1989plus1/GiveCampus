@@ -13,5 +13,12 @@
       npm install
     ```
 
+## Start
+
+  - To start program make sure all modules and dependencies are downloaded
+
+    ```
+      npm start
+    ```
 
 # 
